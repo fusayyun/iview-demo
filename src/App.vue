@@ -16,7 +16,10 @@
 					</div>
 				</Menu>
 			</Header>
-			<Content  :style="{margin: '88px 20px 0', padding:'24px' , minHeight: '500px', background: '#fff'}">
+			<HeaderSection>				
+			</HeaderSection>
+
+			<Content  :style="{margin: '20px 20px 0', padding:'24px' , minHeight: '500px', background: '#fff'}">
 				<router-view />     
 			</Content>
 			<Row type="flex" justify="end">
@@ -39,9 +42,11 @@
 </template>
 <script>
 	import Logo from "@/components/Logo.vue"
+	import HeaderSection from "@/components/HeaderSection.vue"
 	export default{
 		components:{
 			Logo,
+			HeaderSection,
 		},
 	}
 </script>
@@ -63,7 +68,6 @@
 		position: fixed;
 		width: 100%;
 		background: #999;
-		box-shadow: 0 1px 1px rgba(0,0,0,.1);
 		z-index: 900;
 	}
 	.layout-nav{
@@ -91,4 +95,5 @@
 		right: 20px;
 		bottom: 100px;
 	}
+
 </style>

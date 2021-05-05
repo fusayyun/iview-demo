@@ -1,5 +1,6 @@
 <template>
 	<Col span=24>
+		<!-- projects卡片 -->
 		<Row>
 			<Col 
 				v-for="(project,index) in projects"
@@ -7,13 +8,16 @@
 				span=7
 				:offset="[index%3===0?0:1]"
 				class="py">
-					<Card @click.native.stop="onCardClick(index,$event)" :class="[index===activeIndex?'selected':'']">
-						<p slot="title">{{project.title}}</p>
-						<p>{{project.content}}</p>
-					</Card>
+					<Poptip trigger="hover" content="請點擊查看">
+						<Card @click.native.stop="onCardClick(index,$event)" :class="[index===activeIndex?'selected':'']">
+							<p slot="title">{{project.title}}</p>
+							<p>{{project.content}}</p>
+						</Card>
+					</Poptip>
 			</Col>
 		</Row>
 		<br>
+		<!-- 幻燈片 -->
 		<Row>
 			<Col span=24>
 				<Carousel
@@ -40,7 +44,8 @@
 					{
 						title:"Emotion Detection Model",
 						content:"Python: OpenCV, TensorFlow, Keras",
-						image:['project1-1.png',
+						image:[
+							'project1-1.png',
 							'project1-2.png',
 							'project1-3.jpg',
 							'project1-4.png']
@@ -58,7 +63,8 @@
 					{
 						title:"Personal Information Files Nonidentifiable System",
 						content:"Google Apps Script: HTML+JS",
-						image:['project2-1.png',
+						image:[
+							'project2-1.png',
 							'project2-2.png',
 							'project2-3.png',
 							'project2-4.png'],

@@ -5,7 +5,8 @@ import Home from "../views/Home.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  {
+  { 
+    // 主頁，也是"關於我"的頁面
     path: "/",
     name: "Home",
     component: Home,
